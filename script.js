@@ -1,90 +1,92 @@
-// ── NAV SCROLL SHADOW ──
+// NAV: shadow on scroll and accessible mobile toggle
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 30);
+  nav.classList.toggle('scrolled', window.scrollY > 24);
 });
 
-// ── HAMBURGER MENU (mobile, accessible) ──
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.querySelector('.nav-links');
 
-hamburger.addEventListener('click', () => {
+hamburger?.addEventListener('click', () => {
   const expanded = hamburger.getAttribute('aria-expanded') === 'true';
   hamburger.setAttribute('aria-expanded', String(!expanded));
   nav.classList.toggle('open');
+  // reflect aria-hidden for the menu
+  navLinks?.setAttribute('aria-hidden', String(expanded));
 });
 
 // Close mobile menu when a link is clicked
-navLinks.querySelectorAll('a').forEach(link => {
+navLinks?.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
+    navLinks.setAttribute('aria-hidden', 'true');
   });
 });
 
-// Close menu when Escape pressed (accessibility)
+// Close menu on Escape
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && nav.classList.contains('open')) {
     nav.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
     hamburger.focus();
+    navLinks.setAttribute('aria-hidden', 'true');
   }
 });
 
-// ── SCROLL REVEAL ──
-const reveals  = document.querySelectorAll('.reveal');
+// SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('in-view');
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.12 });
 
 reveals.forEach(el => observer.observe(el));
 
-// ── CONTACT FORM (AJAX submit to Formspree) ──
+// CONTACT FORM: AJAX submit to Formspree with honeypot, status UI, optional redirect
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
   const statusEl = document.getElementById('form-status');
-  if (!form) return;
+  if (!form || !statusEl) return;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Honeypot (bots) — field named "website" is hidden in the form; if filled, silently abort
+    // Honeypot field (bots)
     const hp = form.querySelector('input[name="website"]');
     if (hp && hp.value) {
+      // pretend success so bots are discouraged
       statusEl.textContent = '✓ Message sent';
       statusEl.className = 'form-status success';
       form.reset();
       return;
     }
 
-    // Basic client-side validation
-    const formData = new FormData(form);
-    const name = (formData.get('name') || '').toString().trim();
-    const email = (formData.get('email') || '').toString().trim();
-    const message = (formData.get('message') || '').toString().trim();
-
+    // client-side validation
+    const fd = new FormData(form);
+    const name = (fd.get('name') || '').toString().trim();
+    const email = (fd.get('email') || '').toString().trim();
+    const message = (fd.get('message') || '').toString().trim();
     if (!name || !email || !message) {
-      statusEl.textContent = 'Please complete name, email, and message.';
+      statusEl.textContent = 'Please complete name, email and message.';
       statusEl.className = 'form-status error';
       return;
     }
 
     const submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.setAttribute('aria-disabled', 'true');
-    const prevLabel = submitBtn.textContent;
-    submitBtn.textContent = 'Sending…';
+    const prevLabel = submitBtn ? submitBtn.textContent : 'Send Message';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+    }
     statusEl.textContent = '';
     statusEl.className = 'form-status';
 
     try {
       const resp = await fetch(form.action, {
         method: form.method || 'POST',
-        body: formData,
+        body: fd,
         headers: { 'Accept': 'application/json' }
       });
 
@@ -92,8 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
         statusEl.textContent = '✓ Message sent — I will get back to you soon.';
         statusEl.className = 'form-status success';
         form.reset();
+
+        // Optional: redirect after success (uncomment & set URL)
+        // setTimeout(() => { window.location.href = '/thank-you.html'; }, 1400);
       } else {
-        const data = await resp.json().catch(() => null);
+        const data = await resp.json().catch(()=>null);
         const msg = data?.error || 'Something went wrong. Please try again later.';
         statusEl.textContent = msg;
         statusEl.className = 'form-status error';
@@ -102,13 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
       statusEl.textContent = 'Network error — please check your connection and try again.';
       statusEl.className = 'form-status error';
     } finally {
-      submitBtn.disabled = false;
-      submitBtn.removeAttribute('aria-disabled');
-      submitBtn.textContent = prevLabel || 'Send Message';
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = prevLabel;
+      }
     }
   });
 
-  // Copy-to-clipboard for email link (small micro-interaction)
+  // Copy email micro-interaction
   const emailLink = document.querySelector('.contact-detail a[href^="mailto:"]');
   if (emailLink) {
     const emailText = emailLink.getAttribute('href').replace('mailto:', '');
@@ -124,8 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         await navigator.clipboard.writeText(emailText);
         copyBtn.textContent = 'Copied';
-        setTimeout(() => (copyBtn.textContent = 'Copy'), 2000);
-      } catch (e) {
+        setTimeout(()=> copyBtn.textContent = 'Copy', 2000);
+      } catch (err) {
         copyBtn.textContent = 'Copy';
       }
     });
