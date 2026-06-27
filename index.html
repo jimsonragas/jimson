@@ -1,36 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Portfolio of Jimson D. Ragas — Licensed Civil Engineer. Quantity surveying, cost estimation, project engineering, and remote-friendly professional services." />
   <meta name="theme-color" content="#007a8a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jimson D. Ragas — Portfolio" />
+  <meta property="og:description" content="Licensed Civil Engineer — project engineering, quantity surveying, cost estimation, and remote professional services." />
+  <meta property="og:image" content="images/og/og-1200.webp" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain-or-github-pages-url" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@jimsonragas" />
+
   <title>Jimson D. Ragas – Portfolio</title>
 
-  <!-- Google Fonts -->
+  <!-- Preconnect & fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Preload hero image (replace with your hero filename once uploaded) -->
+  <link rel="preload" href="images/photo-hero-1200.webp" as="image">
+
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <!-- JSON-LD Person (improves search & credibility) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Jimson D. Ragas",
+    "jobTitle":"Licensed Civil Engineer",
+    "url":"https://your-domain-or-github-pages-url",
+    "email":"mailto:jimsond.ragas@gmail.com",
+    "sameAs": []
+  }
+  </script>
 </head>
 <body>
 
 <nav id="nav" aria-label="Primary navigation">
-  <div class="nav-logo">Jimson<span>.</span></div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Hire Me</a>
-  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">Jimson<span>.</span></a>
+
+    <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" role="menu" aria-hidden="true">
+      <li role="none"><a role="menuitem" href="#about">About</a></li>
+      <li role="none"><a role="menuitem" href="#skills">Skills</a></li>
+      <li role="none"><a role="menuitem" href="#experience">Experience</a></li>
+      <li role="none"><a role="menuitem" href="#projects">Projects</a></li>
+      <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+    </ul>
+
+    <a class="nav-cta" href="#contact">Hire Me</a>
+  </div>
 </nav>
 
-<section id="hero">
+<!-- HERO -->
+<section id="hero" class="hero">
   <div class="hero-inner">
 
     <div class="hero-text reveal">
@@ -38,40 +72,35 @@
       <h1 class="hero-title">My <span class="italic">Portfolio</span></h1>
       <div class="hero-word">Jimson D. Ragas</div>
       <p class="hero-desc">
-        A Licensed Civil Engineer with experience in project engineering,
-        quantity surveying, cost estimation, and customer-facing sales.
-        Detail-oriented, adaptable, and ready for remote opportunities.
+        A Licensed Civil Engineer with experience in project engineering, quantity surveying, cost estimation, and customer-facing sales. Detail-oriented, adaptable, and ready for remote opportunities.
       </p>
       <div class="hero-btns">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact"  class="btn-outline">Get in Touch</a>
+        <a class="btn-primary" href="#projects">View Projects</a>
+        <a class="btn-outline" href="#contact">Get in Touch</a>
+        <a class="btn-ghost" href="files/Jimson_Ragas_Resume.pdf" download>Download Resume</a>
       </div>
     </div>
 
-    <div class="hero-photo-wrap reveal">
+    <div class="hero-photo-wrap reveal" aria-hidden="false">
       <div class="hero-photo-frame">
         <div class="hero-photo-bg" aria-hidden="true"></div>
 
-        <!-- Replace the <svg> with an uploaded photo.jpg in /images/ when ready -->
-        <svg class="hero-photo" viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder photo">
-          <rect width="360" height="420" fill="#c8edf0"/>
-          <circle cx="180" cy="155" r="75" fill="#008fa0"/>
-          <ellipse cx="180" cy="380" rx="130" ry="95" fill="#008fa0"/>
-          <text x="180" y="215" text-anchor="middle" font-family="Inter"
-                font-size="13" fill="#00B4C8" font-weight="600">
-            [ Replace with your photo ]
-          </text>
-        </svg>
+        <!-- hero photo: responsive picture element (upload images/photo-hero-*.webp and fallback jpg/png) -->
+        <picture>
+          <source type="image/webp" srcset="images/photo-hero-1200.webp 1200w, images/photo-hero-800.webp 800w, images/photo-hero-480.webp 480w" sizes="(max-width:900px) 80vw, 360px">
+          <img class="hero-photo" src="images/photo-hero-800.jpg" alt="Jimson D. Ragas — headshot" loading="lazy" width="360" height="420">
+        </picture>
 
         <div class="hero-badge" aria-hidden="true">
           <span class="num">5+</span>
           <span class="lbl">Years Exp.</span>
         </div>
-        <div class="hero-contacts">
-          <img src="images/phone.svg" alt="Phone icon" class="contact-icon-img" />
-          <a href="tel:+639302139218">+63 930 213 9218</a><br/>
-          <img src="images/mail.svg" alt="Email icon" class="contact-icon-img" />
-          <a href="mailto:jimsond.ragas@gmail.com">jimsond.ragas@gmail.com</a>
+
+        <div class="hero-contacts" aria-hidden="false">
+          <img src="images/phone.svg" alt="" class="contact-icon-img" aria-hidden="true">
+          <a href="tel:+639302139218" class="contact-link">+63 930 213 9218</a><br>
+          <img src="images/mail.svg" alt="" class="contact-icon-img" aria-hidden="true">
+          <a href="mailto:jimsond.ragas@gmail.com" class="contact-link">jimsond.ragas@gmail.com</a>
         </div>
       </div>
     </div>
@@ -79,39 +108,22 @@
   </div>
 </section>
 
-<section>
-  <div id="about">
-
-    <div class="reveal">
-      <!-- Replace the SVG below with: <img src="images/photo.jpg" class="about-img" alt="Jimson D. Ragas" /> -->
-      <svg class="about-img" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder about photo">
-        <rect width="400" height="500" rx="24" fill="#d0eef2"/>
-        <circle cx="200" cy="180" r="90" fill="#00B4C8"/>
-        <ellipse cx="200" cy="460" rx="160" ry="110" fill="#00B4C8"/>
-        <text x="200" y="280" text-anchor="middle" font-family="Inter"
-              font-size="14" fill="#007a8a" font-weight="600">
-          [ Your Photo Here ]
-        </text>
-      </svg>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container reveal">
+    <div class="about-left">
+      <picture>
+        <source type="image/webp" srcset="images/photo-about-1200.webp 1200w, images/photo-about-800.webp 800w" sizes="(max-width:900px) 90vw, 400px">
+        <img class="about-img" src="images/photo-about-800.jpg" alt="Jimson D. Ragas, Licensed Civil Engineer" loading="lazy">
+      </picture>
     </div>
 
-    <div class="about-text reveal">
+    <div class="about-text">
       <p class="section-label">About Me</p>
-      <h2 class="section-heading">Background<br/>&amp; <span class="alt">Identity</span></h2>
-      <p>
-        I am a Licensed Civil Engineer with experience in project engineering,
-        quantity surveying, and cost estimation. I also have over 2 years of
-        experience working with a U.S.-based company in customer sales and
-        product promotion, helping clients through online communication and
-        generating sales results.
-      </p>
-      <p>
-        I am detail-oriented, adaptable, and skilled in both technical and
-        customer-facing roles. With strong communication, organizational, and
-        problem-solving skills, I am eager to contribute to Virtual Assistant,
-        customer support, administrative, sales, or engineering-related remote
-        positions.
-      </p>
+      <h2 class="section-heading">Background<br>&amp; <span class="alt">Identity</span></h2>
+      <p>I am a Licensed Civil Engineer with experience in project engineering, quantity surveying, and cost estimation. I also have over 2 years of experience working with a U.S.-based company in customer sales and product promotion, helping clients through online communication and generating sales results.</p>
+      <p>I am detail-oriented, adaptable, and skilled in both technical and customer-facing roles. With strong communication, organizational, and problem-solving skills, I am eager to contribute to Virtual Assistant, customer support, administrative, sales, or engineering-related remote positions.</p>
+
       <div class="about-tags">
         <span class="tag">Civil Engineering</span>
         <span class="tag">Quantity Surveying</span>
@@ -121,24 +133,23 @@
         <span class="tag">Project Documentation</span>
       </div>
     </div>
-
   </div>
 </section>
 
-<section id="skills">
-  <div class="skills-inner">
+<!-- SKILLS -->
+<section id="skills" class="section bg-light">
+  <div class="container">
     <div class="skills-head reveal">
       <p class="section-label">What I Bring</p>
       <h2 class="section-heading">Skills &amp; <span class="alt">Expertise</span></h2>
     </div>
+
     <div class="skills-grid">
 
       <div class="skill-card reveal">
-        <img src="images/icons/engineering.png" alt="Engineering" class="skill-icon-img" />
+        <img src="images/icons/engineering.png" alt="" class="skill-icon-img" loading="lazy">
         <h3>Technical Expertise</h3>
-        <p>Delivering precise engineering solutions through expertise in drawing
-           interpretation, quantity estimation, construction planning, and technical
-           documentation with a strong focus on quality and accuracy.</p>
+        <p>Delivering precise engineering solutions through drawing interpretation, quantity estimation, construction planning, and technical documentation with a strong focus on quality and accuracy.</p>
         <div class="skill-pills">
           <span class="pill">Drawing Interpretation</span>
           <span class="pill">Quantity Take-Off</span>
@@ -151,11 +162,9 @@
       </div>
 
       <div class="skill-card reveal">
-        <img src="images/icons/design.png" alt="Design" class="skill-icon-img" />
+        <img src="images/icons/design.png" alt="" class="skill-icon-img" loading="lazy">
         <h3>Graphic Design</h3>
-        <p>Design compelling visual content that enhances brand identity,
-           communicates ideas effectively, and supports digital marketing
-           initiatives.</p>
+        <p>Design compelling visual content that enhances brand identity, communicates ideas effectively, and supports digital marketing initiatives.</p>
         <div class="skill-pills">
           <span class="pill">Branding</span>
           <span class="pill">Logo Design</span>
@@ -166,11 +175,9 @@
       </div>
 
       <div class="skill-card reveal">
-        <img src="images/icons/mind.png" alt="Soft skills" class="skill-icon-img" />
+        <img src="images/icons/mind.png" alt="" class="skill-icon-img" loading="lazy">
         <h3>Additional Skills</h3>
-        <p>Recognized for analytical thinking, effective time management, and
-           adaptability, with the ability to collaborate across teams and deliver
-           quality results under deadlines.</p>
+        <p>Recognized for analytical thinking, effective time management, and adaptability, with the ability to collaborate across teams and deliver quality results under deadlines.</p>
         <div class="skill-pills">
           <span class="pill">Critical Thinking</span>
           <span class="pill">Time Management</span>
@@ -183,94 +190,101 @@
   </div>
 </section>
 
-<section id="softwares">
-  <div class="sw-head reveal">
-    <p class="section-label">Tools I Use</p>
-    <h2 class="section-heading">Software &amp; <span class="alt">Applications</span></h2>
-  </div>
-  <div class="sw-grid">
-    <div class="sw-card reveal"><img src="images/logos/autocad.png" alt="AutoCAD" class="sw-icon-img" /><div class="sw-name">AutoCAD</div></div>
-    <div class="sw-card reveal"><img src="images/logos/bluebeam.png" alt="Bluebeam Revu" class="sw-icon-img" /><div class="sw-name">Bluebeam Revu</div></div>
-    <div class="sw-card reveal"><img src="images/logos/planswift.png" alt="PlanSwift" class="sw-icon-img" /><div class="sw-name">PlanSwift</div></div>
-    <div class="sw-card reveal"><img src="images/logos/sketchup.png" alt="SketchUp" class="sw-icon-img" /><div class="sw-name">SketchUp</div></div>
-    <div class="sw-card reveal"><img src="images/logos/office.png" alt="Microsoft Office" class="sw-icon-img" /><div class="sw-name">Microsoft Office</div></div>
-    <div class="sw-card reveal"><img src="images/logos/photoshop.png" alt="Adobe Photoshop" class="sw-icon-img" /><div class="sw-name">Adobe Photoshop</div></div>
-    <div class="sw-card reveal"><img src="images/logos/capcut.png" alt="CapCut" class="sw-icon-img" /><div class="sw-name">CapCut</div></div>
-    <div class="sw-card reveal"><img src="images/logos/canva.png" alt="Canva" class="sw-icon-img" /><div class="sw-name">Canva</div></div>
+<!-- SOFTWARES -->
+<section id="softwares" class="section">
+  <div class="container reveal">
+    <div class="sw-head">
+      <p class="section-label">Tools I Use</p>
+      <h2 class="section-heading">Software &amp; <span class="alt">Applications</span></h2>
+    </div>
+
+    <div class="sw-grid">
+      <div class="sw-card"><img class="sw-icon-img" src="images/logos/autocad.png" alt="AutoCAD" loading="lazy"><div class="sw-name">AutoCAD</div></div>
+      <div class="sw-card"><img class="sw-icon-img" src="images/logos/bluebeam.png" alt="Bluebeam" loading="lazy"><div class="sw-name">Bluebeam Revu</div></div>
+      <div class="sw-card"><img class="sw-icon-img" src="images/logos/planswift.png" alt="PlanSwift" loading="lazy"><div class="sw-name">PlanSwift</div></div>
+      <div class="sw-card"><img class="sw-icon-img" src="images/logos/sketchup.png" alt="SketchUp" loading="lazy"><div class="sw-name">SketchUp</div></div>
+      <div class="sw-card"><img class="sw-icon-img" src="images/logos/office.png" alt="Microsoft Office" loading="lazy"><div class="sw-name">Microsoft Office</div></div>
+      <div class="sw-card"><img class="sw-icon-img" src="images/logos/photoshop.png" alt="Photoshop" loading="lazy"><div class="sw-name">Adobe Photoshop</div></div>
+      <div class="sw-card"><img class="sw-icon-img" src="images/logos/capcut.png" alt="CapCut" loading="lazy"><div class="sw-name">CapCut</div></div>
+      <div class="sw-card"><img class="sw-icon-img" src="images/logos/canva.png" alt="Canva" loading="lazy"><div class="sw-name">Canva</div></div>
+    </div>
   </div>
 </section>
 
-<section id="experience">
-  <div class="exp-head reveal">
-    <p class="section-label">Work History</p>
-    <h2 class="section-heading">My <span class="alt">Experience</span></h2>
-  </div>
-  <div class="timeline">
-
-    <div class="timeline-item reveal">
-      <div class="timeline-dot" aria-hidden="true"></div>
-      <p class="timeline-date">2025 – 2026</p>
-      <h3 class="timeline-role">Project Engineer</h3>
-      <p class="timeline-company">Kanaway Builders Corporation</p>
-      <ul class="timeline-list">
-        <li>Conducted quantity take-offs using Bluebeam and PlanSwift for material estimation.</li>
-        <li>Review engineering drawings, specifications, and technical documents for project compliance.</li>
-        <li>Assist in planning, coordinating, and executing construction projects from initiation to completion.</li>
-        <li>Monitor project schedules, manpower, and resources using Google Sheets and Microsoft Excel to support timely project delivery.</li>
-        <li>Coordinate with contractors, suppliers, and project teams to ensure smooth site operations.</li>
-      </ul>
+<!-- EXPERIENCE -->
+<section id="experience" class="section bg-light">
+  <div class="container reveal">
+    <div class="exp-head">
+      <p class="section-label">Work History</p>
+      <h2 class="section-heading">My <span class="alt">Experience</span></h2>
     </div>
 
-    <div class="timeline-item reveal">
-      <div class="timeline-dot" aria-hidden="true"></div>
-      <p class="timeline-date">2022 – 2025</p>
-      <h3 class="timeline-role">Quantity &amp; Site Engineer</h3>
-      <p class="timeline-company">Coastland Construction and Development Corp.</p>
-      <ul class="timeline-list">
-        <li>Prepared detailed cost estimates, budgets, and bill of quantities for construction projects.</li>
-        <li>Created weekly and monthly accomplishment reports to determine the status of projects.</li>
-        <li>Monitored project schedules, materials, and workforce productivity.</li>
-        <li>Coordinated with project managers, subcontractors, and suppliers to resolve site issues efficiently.</li>
-        <li>Conducted site inspections to ensure quality projects and proper execution of safety protocols.</li>
-      </ul>
-    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <p class="timeline-date">2025 – 2026</p>
+        <h3 class="timeline-role">Project Engineer</h3>
+        <p class="timeline-company">Kanaway Builders Corporation</p>
+        <ul class="timeline-list">
+          <li>Conducted quantity take-offs using Bluebeam and PlanSwift for material estimation.</li>
+          <li>Review engineering drawings, specifications, and technical documents for project compliance.</li>
+          <li>Assist in planning, coordinating, and executing construction projects from initiation to completion.</li>
+          <li>Monitor project schedules, manpower, and resources using Google Sheets and Microsoft Excel to support timely project delivery.</li>
+          <li>Coordinate with contractors, suppliers, and project teams to ensure smooth site operations.</li>
+        </ul>
+      </div>
 
-    <div class="timeline-item reveal">
-      <div class="timeline-dot" aria-hidden="true"></div>
-      <p class="timeline-date">2020 – 2022</p>
-      <h3 class="timeline-role">Customer Chat Support / Sales Representative</h3>
-      <p class="timeline-company">Jacknbo Clothing (U.S.-Based)</p>
-      <ul class="timeline-list">
-        <li>Created and managed an Instagram page for baby clothing, promoting products and building brand presence.</li>
-        <li>Connected directly with potential customers through Instagram messages, guiding them from inquiry to purchase.</li>
-        <li>Provided product information, handled customer concerns, and ensured a smooth buying experience.</li>
-        <li>Achieved top sales performance weekly and monthly, recognized as one of the best performers on the team.</li>
-      </ul>
-    </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <p class="timeline-date">2022 – 2025</p>
+        <h3 class="timeline-role">Quantity &amp; Site Engineer</h3>
+        <p class="timeline-company">Coastland Construction and Development Corp.</p>
+        <ul class="timeline-list">
+          <li>Prepared detailed cost estimates, budgets, and bill of quantities for construction projects.</li>
+          <li>Created weekly and monthly accomplishment reports to determine the status of projects.</li>
+          <li>Monitored project schedules, materials, and workforce productivity.</li>
+          <li>Coordinated with project managers, subcontractors, and suppliers to resolve site issues efficiently.</li>
+          <li>Conducted site inspections to ensure quality projects and proper execution of safety protocols.</li>
+        </ul>
+      </div>
 
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <p class="timeline-date">2020 – 2022</p>
+        <h3 class="timeline-role">Customer Chat Support / Sales Representative</h3>
+        <p class="timeline-company">Jacknbo Clothing (U.S.-Based)</p>
+        <ul class="timeline-list">
+          <li>Created and managed an Instagram page for baby clothing, promoting products and building brand presence.</li>
+          <li>Connected directly with potential customers through Instagram messages, guiding them from inquiry to purchase.</li>
+          <li>Provided product information, handled customer concerns, and ensured a smooth buying experience.</li>
+          <li>Achieved top sales performance weekly and monthly, recognized as one of the best performers on the team.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="projects">
-  <div class="projects-inner">
-    <div class="projects-head reveal">
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="container reveal">
+    <div class="projects-head">
       <p class="section-label">Sample Engineering Works</p>
       <h2 class="section-heading">Featured <span class="alt">Projects</span></h2>
     </div>
-    <div class="project-cards">
 
-      <div class="project-card reveal">
+    <div class="project-cards">
+      <article class="project-card reveal">
         <div class="project-img">
-          <img src="images/projects/tagum-fish-market.jpg" alt="Tagum Fish Market" class="project-image" />
+          <picture>
+            <source type="image/webp" srcset="images/projects/tagum-fish-market-1200.webp 1200w, images/projects/tagum-fish-market-800.webp 800w" sizes="(max-width:900px) 100vw, 400px">
+            <img class="project-image" src="images/projects/tagum-fish-market-800.jpg" alt="Construction of Tagum Fish Market" loading="lazy">
+          </picture>
         </div>
         <div class="project-body">
           <span class="project-contract">Contract: ₱137 Million</span>
           <h3>Construction of Tagum Fish Market</h3>
           <p class="project-loc">📍 Tagum City, Davao del Norte, Philippines</p>
-          <p>The Construction of the Tagum Fish Market involved the development of a modern
-             public market designed to provide a clean, safe, and efficient trading environment.
-             The project included structural, architectural, utility, and site development works
-             to support local commerce and improve public market facilities.</p>
+          <p>The Construction of the Tagum Fish Market involved the development of a modern public market designed to provide a clean, safe, and efficient trading environment. The project included structural, architectural, utility, and site development works to support local commerce and improve public market facilities.</p>
           <div class="project-roles">
             <div class="proj-role">Quantity Take-Off and BOQ Preparation</div>
             <div class="proj-role">Progress Tracking and Reporting</div>
@@ -278,21 +292,20 @@
             <div class="proj-role">Project Documentation</div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="project-card reverse reveal">
+      <article class="project-card reverse reveal">
         <div class="project-img">
-          <img src="images/projects/school-building.jpg" alt="12-Classroom School Building" class="project-image" />
+          <picture>
+            <source type="image/webp" srcset="images/projects/school-building-1200.webp 1200w, images/projects/school-building-800.webp 800w" sizes="(max-width:900px) 100vw, 400px">
+            <img class="project-image" src="images/projects/school-building-800.jpg" alt="12-Classroom School Building" loading="lazy">
+          </picture>
         </div>
         <div class="project-body">
           <span class="project-contract">Contract: ₱50 Million</span>
           <h3>Construction of Two-Storey 12-Classroom School Building</h3>
           <p class="project-loc">📍 Tagum City, Davao del Norte, Philippines</p>
-          <p>The project involved the construction of a two-storey, 12-classroom school
-             building designed to provide a safe, functional, and modern learning environment.
-             The scope included structural, architectural, electrical, plumbing, and site
-             development works, resulting in a durable educational facility that meets
-             government standards for public infrastructure.</p>
+          <p>The project involved the construction of a two-storey, 12-classroom school building designed to provide a safe, functional, and modern learning environment. The scope included structural, architectural, electrical, plumbing, and site development works, resulting in a durable educational facility that meets government standards for public infrastructure.</p>
           <div class="project-roles">
             <div class="proj-role">BOQ Preparation</div>
             <div class="proj-role">Site Supervision</div>
@@ -301,21 +314,20 @@
             <div class="proj-role">Quality Inspection</div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="project-card reveal">
+      <article class="project-card reveal">
         <div class="project-img">
-          <img src="images/projects/multi-purpose.jpg" alt="Multi-Purpose Building" class="project-image" />
+          <picture>
+            <source type="image/webp" srcset="images/projects/multi-purpose-1200.webp 1200w, images/projects/multi-purpose-800.webp 800w" sizes="(max-width:900px) 100vw, 400px">
+            <img class="project-image" src="images/projects/multi-purpose-800.jpg" alt="Multi-Purpose Building" loading="lazy">
+          </picture>
         </div>
         <div class="project-body">
           <span class="project-contract">Contract: ₱2.27 Million</span>
           <h3>Design and Construction of Multi-Purpose Building</h3>
           <p class="project-loc">📍 Philippines</p>
-          <p>The project involved the design and construction of a modern multi-purpose
-             building intended for warehousing, logistics, and commercial use. It included
-             site development, structural and architectural works, utility installations,
-             and external improvements, resulting in a functional facility built to meet
-             industry standards for quality, safety, and operational efficiency.</p>
+          <p>The project involved the design and construction of a modern multi-purpose building intended for warehousing, logistics, and commercial use. It included site development, structural and architectural works, utility installations, and external improvements, resulting in a functional facility built to meet industry standards for quality, safety, and operational efficiency.</p>
           <div class="project-roles">
             <div class="proj-role">BOQ Preparation</div>
             <div class="proj-role">Site Supervision</div>
@@ -324,37 +336,38 @@
             <div class="proj-role">Quality Inspection</div>
           </div>
         </div>
-      </div>
-
+      </article>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <div class="contact-inner">
-
-    <div class="contact-left reveal">
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+  <div class="container reveal">
+    <div class="contact-left">
       <p class="section-label">Get In Touch</p>
       <h2 class="section-heading">Let's <span class="alt">Work Together</span></h2>
-      <p>I'm always open to discussing new projects, creative ideas, or opportunities
-         to be part of your vision. Let's build something great.</p>
+      <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's build something great.</p>
+
       <div class="contact-items">
         <div class="contact-item">
-          <img src="images/phone.svg" alt="Phone" class="contact-icon-img" />
+          <img src="images/phone.svg" alt="" class="contact-icon-img" aria-hidden="true">
           <div class="contact-detail">
             <div class="lbl">Phone / WhatsApp</div>
-            <a href="tel:+639302139218" class="val">+63 930 213 9218</a>
+            <a class="val" href="tel:+639302139218">+63 930 213 9218</a>
           </div>
         </div>
+
         <div class="contact-item">
-          <img src="images/mail.svg" alt="Email" class="contact-icon-img" />
+          <img src="images/mail.svg" alt="" class="contact-icon-img" aria-hidden="true">
           <div class="contact-detail">
             <div class="lbl">Email</div>
-            <a href="mailto:jimsond.ragas@gmail.com" class="val">jimsond.ragas@gmail.com</a>
+            <a class="val" href="mailto:jimsond.ragas@gmail.com">jimsond.ragas@gmail.com</a>
           </div>
         </div>
+
         <div class="contact-item">
-          <img src="images/location.svg" alt="Location" class="contact-icon-img" />
+          <img src="images/location.svg" alt="" class="contact-icon-img" aria-hidden="true">
           <div class="contact-detail">
             <div class="lbl">Location</div>
             <span class="val">Tagum City, Davao Del Norte, Philippines</span>
@@ -363,28 +376,34 @@
       </div>
     </div>
 
-    <form id="contact-form" class="contact-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+    <!-- Replace YOUR_FORM_ID below with your actual Formspree ID (the part after /f/) -->
+    <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
       <label class="sr-only" for="name">Your name</label>
-      <input id="name" name="name" type="text" placeholder="Your Name" required />
+      <input id="name" name="name" type="text" placeholder="Your Name" required>
 
       <label class="sr-only" for="email">Your email</label>
-      <input id="email" name="email" type="email" placeholder="Your Email" required />
+      <input id="email" name="email" type="email" placeholder="Your Email" required>
 
       <label class="sr-only" for="subject">Subject</label>
-      <input id="subject" name="subject" type="text" placeholder="Subject" required />
+      <input id="subject" name="subject" type="text" placeholder="Subject" required>
 
       <label class="sr-only" for="message">Message</label>
       <textarea id="message" name="message" placeholder="Tell me about your project or opportunity…" rows="6" required></textarea>
 
-      <!-- Optional: Change the email subject that arrives in your inbox -->
-      <input type="hidden" name="_subject" value="New message from Portfolio website" />
+      <!-- Honeypot to reduce spam -->
+      <label style="display:none !important;">Leave this field blank</label>
+      <input type="text" name="website" style="display:none !important" tabindex="-1" autocomplete="off">
 
-      <!-- If you want to receive a copy: add name="_cc" value="you@domain.com" -->
+      <!-- Customize subject line for the email you receive -->
+      <input type="hidden" name="_subject" value="New message from Portfolio website">
+
+      <!-- Optional: copy to another email; uncomment and set: -->
+      <!-- <input type="hidden" name="_cc" value="you@domain.com"> -->
+
       <button type="submit" class="btn-send">Send Message</button>
 
-      <div id="form-status" role="status" aria-live="polite" class="form-status"></div>
+      <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
     </form>
-
   </div>
 </section>
 
@@ -393,7 +412,7 @@
   <span>Built with ❤️ · <a href="mailto:jimsond.ragas@gmail.com">jimsond.ragas@gmail.com</a></span>
 </footer>
 
-<!-- JavaScript -->
+<!-- Scripts -->
 <script src="script.js"></script>
 
 </body>
