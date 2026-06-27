@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Jimson D. Ragas — Licensed Civil Engineer. Quantity surveying, cost estimation, project engineering, and remote-friendly professional services." />
+  <meta name="theme-color" content="#007a8a" />
   <title>Jimson D. Ragas – Portfolio</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ══════════════════════════════
-     NAV
-══════════════════════════════ -->
-<nav id="nav">
+<nav id="nav" aria-label="Primary navigation">
   <div class="nav-logo">Jimson<span>.</span></div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -26,14 +25,11 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Hire Me</a>
-  <div class="hamburger" id="hamburger">
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
-<!-- ══════════════════════════════
-     HERO
-══════════════════════════════ -->
 <section id="hero">
   <div class="hero-inner">
 
@@ -54,14 +50,10 @@
 
     <div class="hero-photo-wrap reveal">
       <div class="hero-photo-frame">
-        <div class="hero-photo-bg"></div>
+        <div class="hero-photo-bg" aria-hidden="true"></div>
 
-        <!--
-          REPLACE the <svg> below with:
-          <img src="photo.jpg" class="hero-photo" alt="Jimson D. Ragas" />
-          and upload photo.jpg to the same folder.
-        -->
-        <svg class="hero-photo" viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg">
+        <!-- Replace the <svg> with an uploaded photo.jpg in /images/ when ready -->
+        <svg class="hero-photo" viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder photo">
           <rect width="360" height="420" fill="#c8edf0"/>
           <circle cx="180" cy="155" r="75" fill="#008fa0"/>
           <ellipse cx="180" cy="380" rx="130" ry="95" fill="#008fa0"/>
@@ -71,13 +63,15 @@
           </text>
         </svg>
 
-        <div class="hero-badge">
+        <div class="hero-badge" aria-hidden="true">
           <span class="num">5+</span>
           <span class="lbl">Years Exp.</span>
         </div>
         <div class="hero-contacts">
-          📞 <a href="tel:+639302139218">+63 930 213 9218</a><br/>
-          ✉️ <a href="mailto:jimsond.ragas@gmail.com">jimsond.ragas@gmail.com</a>
+          <img src="images/phone.svg" alt="Phone icon" class="contact-icon-img" />
+          <a href="tel:+639302139218">+63 930 213 9218</a><br/>
+          <img src="images/mail.svg" alt="Email icon" class="contact-icon-img" />
+          <a href="mailto:jimsond.ragas@gmail.com">jimsond.ragas@gmail.com</a>
         </div>
       </div>
     </div>
@@ -85,18 +79,12 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════
-     ABOUT
-══════════════════════════════ -->
 <section>
   <div id="about">
 
     <div class="reveal">
-      <!--
-        REPLACE the <svg> below with:
-        <img src="photo.jpg" class="about-img" alt="Jimson D. Ragas" />
-      -->
-      <svg class="about-img" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+      <!-- Replace the SVG below with: <img src="images/photo.jpg" class="about-img" alt="Jimson D. Ragas" /> -->
+      <svg class="about-img" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder about photo">
         <rect width="400" height="500" rx="24" fill="#d0eef2"/>
         <circle cx="200" cy="180" r="90" fill="#00B4C8"/>
         <ellipse cx="200" cy="460" rx="160" ry="110" fill="#00B4C8"/>
@@ -137,9 +125,6 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════
-     SKILLS
-══════════════════════════════ -->
 <section id="skills">
   <div class="skills-inner">
     <div class="skills-head reveal">
@@ -149,7 +134,7 @@
     <div class="skills-grid">
 
       <div class="skill-card reveal">
-        <div class="skill-icon">🏗️</div>
+        <img src="images/icons/engineering.png" alt="Engineering" class="skill-icon-img" />
         <h3>Technical Expertise</h3>
         <p>Delivering precise engineering solutions through expertise in drawing
            interpretation, quantity estimation, construction planning, and technical
@@ -166,7 +151,7 @@
       </div>
 
       <div class="skill-card reveal">
-        <div class="skill-icon">🎨</div>
+        <img src="images/icons/design.png" alt="Design" class="skill-icon-img" />
         <h3>Graphic Design</h3>
         <p>Design compelling visual content that enhances brand identity,
            communicates ideas effectively, and supports digital marketing
@@ -181,7 +166,7 @@
       </div>
 
       <div class="skill-card reveal">
-        <div class="skill-icon">🧠</div>
+        <img src="images/icons/mind.png" alt="Soft skills" class="skill-icon-img" />
         <h3>Additional Skills</h3>
         <p>Recognized for analytical thinking, effective time management, and
            adaptability, with the ability to collaborate across teams and deliver
@@ -198,29 +183,23 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════
-     SOFTWARES
-══════════════════════════════ -->
 <section id="softwares">
   <div class="sw-head reveal">
     <p class="section-label">Tools I Use</p>
     <h2 class="section-heading">Software &amp; <span class="alt">Applications</span></h2>
   </div>
   <div class="sw-grid">
-    <div class="sw-card reveal"><div class="sw-icon">📐</div><div class="sw-name">AutoCAD</div></div>
-    <div class="sw-card reveal"><div class="sw-icon">🔵</div><div class="sw-name">Bluebeam Revu</div></div>
-    <div class="sw-card reveal"><div class="sw-icon">📊</div><div class="sw-name">PlanSwift</div></div>
-    <div class="sw-card reveal"><div class="sw-icon">🏠</div><div class="sw-name">SketchUp</div></div>
-    <div class="sw-card reveal"><div class="sw-icon">💼</div><div class="sw-name">Microsoft Office</div></div>
-    <div class="sw-card reveal"><div class="sw-icon">🖼️</div><div class="sw-name">Adobe Photoshop</div></div>
-    <div class="sw-card reveal"><div class="sw-icon">🎬</div><div class="sw-name">CapCut</div></div>
-    <div class="sw-card reveal"><div class="sw-icon">✏️</div><div class="sw-name">Canva</div></div>
+    <div class="sw-card reveal"><img src="images/logos/autocad.png" alt="AutoCAD" class="sw-icon-img" /><div class="sw-name">AutoCAD</div></div>
+    <div class="sw-card reveal"><img src="images/logos/bluebeam.png" alt="Bluebeam Revu" class="sw-icon-img" /><div class="sw-name">Bluebeam Revu</div></div>
+    <div class="sw-card reveal"><img src="images/logos/planswift.png" alt="PlanSwift" class="sw-icon-img" /><div class="sw-name">PlanSwift</div></div>
+    <div class="sw-card reveal"><img src="images/logos/sketchup.png" alt="SketchUp" class="sw-icon-img" /><div class="sw-name">SketchUp</div></div>
+    <div class="sw-card reveal"><img src="images/logos/office.png" alt="Microsoft Office" class="sw-icon-img" /><div class="sw-name">Microsoft Office</div></div>
+    <div class="sw-card reveal"><img src="images/logos/photoshop.png" alt="Adobe Photoshop" class="sw-icon-img" /><div class="sw-name">Adobe Photoshop</div></div>
+    <div class="sw-card reveal"><img src="images/logos/capcut.png" alt="CapCut" class="sw-icon-img" /><div class="sw-name">CapCut</div></div>
+    <div class="sw-card reveal"><img src="images/logos/canva.png" alt="Canva" class="sw-icon-img" /><div class="sw-name">Canva</div></div>
   </div>
 </section>
 
-<!-- ══════════════════════════════
-     EXPERIENCE
-══════════════════════════════ -->
 <section id="experience">
   <div class="exp-head reveal">
     <p class="section-label">Work History</p>
@@ -229,7 +208,7 @@
   <div class="timeline">
 
     <div class="timeline-item reveal">
-      <div class="timeline-dot"></div>
+      <div class="timeline-dot" aria-hidden="true"></div>
       <p class="timeline-date">2025 – 2026</p>
       <h3 class="timeline-role">Project Engineer</h3>
       <p class="timeline-company">Kanaway Builders Corporation</p>
@@ -243,7 +222,7 @@
     </div>
 
     <div class="timeline-item reveal">
-      <div class="timeline-dot"></div>
+      <div class="timeline-dot" aria-hidden="true"></div>
       <p class="timeline-date">2022 – 2025</p>
       <h3 class="timeline-role">Quantity &amp; Site Engineer</h3>
       <p class="timeline-company">Coastland Construction and Development Corp.</p>
@@ -257,7 +236,7 @@
     </div>
 
     <div class="timeline-item reveal">
-      <div class="timeline-dot"></div>
+      <div class="timeline-dot" aria-hidden="true"></div>
       <p class="timeline-date">2020 – 2022</p>
       <h3 class="timeline-role">Customer Chat Support / Sales Representative</h3>
       <p class="timeline-company">Jacknbo Clothing (U.S.-Based)</p>
@@ -272,9 +251,6 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════
-     PROJECTS
-══════════════════════════════ -->
 <section id="projects">
   <div class="projects-inner">
     <div class="projects-head reveal">
@@ -283,13 +259,9 @@
     </div>
     <div class="project-cards">
 
-      <!-- Project 1 -->
       <div class="project-card reveal">
         <div class="project-img">
-          <div class="project-img-ph">
-            <div class="proj-icon">🏪</div>
-            <div class="proj-name">Tagum Fish Market</div>
-          </div>
+          <img src="images/projects/tagum-fish-market.jpg" alt="Tagum Fish Market" class="project-image" />
         </div>
         <div class="project-body">
           <span class="project-contract">Contract: ₱137 Million</span>
@@ -308,13 +280,9 @@
         </div>
       </div>
 
-      <!-- Project 2 -->
       <div class="project-card reverse reveal">
         <div class="project-img">
-          <div class="project-img-ph">
-            <div class="proj-icon">🏫</div>
-            <div class="proj-name">12-Classroom School Building</div>
-          </div>
+          <img src="images/projects/school-building.jpg" alt="12-Classroom School Building" class="project-image" />
         </div>
         <div class="project-body">
           <span class="project-contract">Contract: ₱50 Million</span>
@@ -335,13 +303,9 @@
         </div>
       </div>
 
-      <!-- Project 3 -->
       <div class="project-card reveal">
         <div class="project-img">
-          <div class="project-img-ph">
-            <div class="proj-icon">🏭</div>
-            <div class="proj-name">Multi-Purpose Building</div>
-          </div>
+          <img src="images/projects/multi-purpose.jpg" alt="Multi-Purpose Building" class="project-image" />
         </div>
         <div class="project-body">
           <span class="project-contract">Contract: ₱2.27 Million</span>
@@ -366,9 +330,6 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════
-     CONTACT
-══════════════════════════════ -->
 <section id="contact">
   <div class="contact-inner">
 
@@ -379,21 +340,21 @@
          to be part of your vision. Let's build something great.</p>
       <div class="contact-items">
         <div class="contact-item">
-          <div class="contact-icon">📞</div>
+          <img src="images/phone.svg" alt="Phone" class="contact-icon-img" />
           <div class="contact-detail">
             <div class="lbl">Phone / WhatsApp</div>
             <a href="tel:+639302139218" class="val">+63 930 213 9218</a>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">✉️</div>
+          <img src="images/mail.svg" alt="Email" class="contact-icon-img" />
           <div class="contact-detail">
             <div class="lbl">Email</div>
             <a href="mailto:jimsond.ragas@gmail.com" class="val">jimsond.ragas@gmail.com</a>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">📍</div>
+          <img src="images/location.svg" alt="Location" class="contact-icon-img" />
           <div class="contact-detail">
             <div class="lbl">Location</div>
             <span class="val">Tagum City, Davao Del Norte, Philippines</span>
@@ -402,20 +363,31 @@
       </div>
     </div>
 
-    <div class="contact-form reveal">
-      <input type="text"  placeholder="Your Name" />
-      <input type="email" placeholder="Your Email" />
-      <input type="text"  placeholder="Subject" />
-      <textarea placeholder="Tell me about your project or opportunity…"></textarea>
-      <button class="btn-send" onclick="handleFormSubmit(this)">Send Message</button>
-    </div>
+    <form id="contact-form" class="contact-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <label class="sr-only" for="name">Your name</label>
+      <input id="name" name="name" type="text" placeholder="Your Name" required />
+
+      <label class="sr-only" for="email">Your email</label>
+      <input id="email" name="email" type="email" placeholder="Your Email" required />
+
+      <label class="sr-only" for="subject">Subject</label>
+      <input id="subject" name="subject" type="text" placeholder="Subject" required />
+
+      <label class="sr-only" for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Tell me about your project or opportunity…" rows="6" required></textarea>
+
+      <!-- Optional: Change the email subject that arrives in your inbox -->
+      <input type="hidden" name="_subject" value="New message from Portfolio website" />
+
+      <!-- If you want to receive a copy: add name="_cc" value="you@domain.com" -->
+      <button type="submit" class="btn-send">Send Message</button>
+
+      <div id="form-status" role="status" aria-live="polite" class="form-status"></div>
+    </form>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════
-     FOOTER
-══════════════════════════════ -->
 <footer>
   <span>© 2026 Jimson D. Ragas · Licensed Civil Engineer</span>
   <span>Built with ❤️ · <a href="mailto:jimsond.ragas@gmail.com">jimsond.ragas@gmail.com</a></span>
