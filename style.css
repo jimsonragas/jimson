@@ -202,41 +202,6 @@ nav.open .nav-links a{color:var(--dark);padding:8px 0}
   font-size:.95rem;
 }
 
-/* Project Metrics */
-.project-metrics{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  padding:24px;
-  background:linear-gradient(135deg, rgba(0,180,200,0.04) 0%, rgba(0,180,200,0.02) 100%);
-  border-radius:12px;
-  margin-bottom:24px;
-  border:1px solid rgba(0,180,200,0.1);
-}
-
-.metric{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-}
-
-.metric-value{
-  font-family:'Montserrat',sans-serif;
-  font-size:1.2rem;
-  font-weight:900;
-  color:var(--teal);
-  margin-bottom:6px;
-}
-
-.metric-label{
-  font-size:.75rem;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:.5px;
-  font-weight:600;
-}
-
 /* Project Roles/Skills */
 .project-roles{
   display:flex;
