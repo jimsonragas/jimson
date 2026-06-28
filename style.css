@@ -228,8 +228,9 @@ nav.open .nav-links a{color:var(--dark);padding:8px 0}
 }
 
 /* Softwares */
-.sw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.sw-card{background:linear-gradient(180deg,#f8ffff,#f2fbfb);border-radius:12px;padding:20px;text-align:center;box-shadow:var(--shadow-1)}
+.sw-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.sw-card{background:linear-gradient(180deg,#f8ffff,#f2fbfb);border-radius:12px;padding:12px;text-align:center;box-shadow:var(--shadow-1);height:100px;display:flex;align-items:center;justify-content:center}
+.sw-card img{max-width:60px;max-height:60px;object-fit:contain}
 
 /* Timeline */
 .timeline{position:relative;padding-left:40px}
@@ -271,7 +272,7 @@ footer a{color:var(--teal)}
   .hero-inner{grid-template-columns:1fr;gap:28px;padding:0 20px}
   .hero-photo-frame{width:260px;height:300px;margin:0 auto}
   .skills-grid{grid-template-columns:1fr}
-  .sw-grid{grid-template-columns:repeat(2,1fr)}
+  .sw-grid{grid-template-columns:repeat(3,1fr)}
   .project-card,.project-card.reverse{grid-template-columns:1fr;gap:0}
   .project-img{min-height:280px}
   .project-body{padding:32px 24px}
