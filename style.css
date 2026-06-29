@@ -40,7 +40,7 @@ nav .nav-inner{display:flex;align-items:center;justify-content:flex-start;gap:32
 .nav-links{display:flex;gap:26px;list-style:none;align-items:center}
 .nav-links a{font-size:0.82rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);text-decoration:none}
 .nav-links a:hover,.nav-links a:focus{color:var(--teal);outline:none}
-.nav-cta{background:var(--teal);color:#fff;padding:10px 20px;border-radius:28px;text-decoration:none;font-weight:700}
+.nav-cta{background:var(--teal);color:#fff;padding:10px 20px;border-radius:28px;text-decoration:none;font-weight:700;margin-left:auto}
 .hamburger{display:none;background:none;border:0;padding:8px;cursor:pointer}
 .hamburger span{display:block;width:22px;height:2px;background:var(--dark);margin:4px 0;border-radius:2px;transition:transform .25s}
 
