@@ -77,10 +77,6 @@ nav.open .nav-links a{color:var(--dark);padding:8px 0}
 .section-heading{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.6rem);margin-bottom:18px}
 .alt{color:var(--teal);font-style:italic}
 
-/* About */
-.about-left{margin-bottom:24px}
-.about-img{width:100%;height:auto;border-radius:18px;box-shadow:var(--shadow-2)}
-
 /* Skills */
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 
