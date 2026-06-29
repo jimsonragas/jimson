@@ -34,7 +34,7 @@ body{
 
 /* NAV */
 nav{position:fixed;inset:0 0 auto 0;z-index:110;background:rgba(255,255,255,0.75);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,180,200,0.06)}
-nav .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:var(--max-width);margin:0 auto}
+nav .nav-inner{display:flex;align-items:center;justify-content:flex-start;gap:32px;padding:18px 24px;max-width:var(--max-width);margin:0 auto}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:var(--dark);text-decoration:none}
 .nav-logo span{color:var(--teal)}
 .nav-links{display:flex;gap:26px;list-style:none;align-items:center}
