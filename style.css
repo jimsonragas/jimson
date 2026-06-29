@@ -146,7 +146,6 @@ nav.open .nav-links a{color:var(--dark);padding:8px 0}
 @media(max-width:900px){
   .skills-grid{grid-template-columns:1fr}
 }
-
 /* Projects - Premium Enhanced Design */
 .project-cards{display:flex;flex-direction:column;gap:48px}
 
