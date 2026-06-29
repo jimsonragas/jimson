@@ -223,8 +223,13 @@ nav.open .nav-links a{color:var(--dark);padding:8px 0}
   background:rgba(0,180,200,0.08);
   border-color:var(--teal);
   transform:translateY(-2px);
-}
+} 
 
+/* Drive button */
+.btn-drive{display:inline-flex;align-items:center;gap:6px;margin-top:18px;padding:7px 14px;border-radius:8px;border:1px solid rgba(0,180,200,0.3);color:var(--teal);font-size:.78rem;font-weight:700;text-decoration:none;transition:background .2s,border-color .2s}
+.btn-drive:hover{background:rgba(0,180,200,0.08);border-color:var(--teal)}
+.drive-icon{width:14px;height:14px;flex-shrink:0}
+ 
 /* Softwares */
 .sw-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
 .sw-card{background:linear-gradient(180deg,#f8ffff,#f2fbfb);border-radius:12px;padding:12px;text-align:center;box-shadow:var(--shadow-1);height:100px;display:flex;align-items:center;justify-content:center;flex-direction:column}
