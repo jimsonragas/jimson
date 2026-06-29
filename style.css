@@ -34,13 +34,13 @@ body{
 
 /* NAV */
 nav{position:fixed;inset:0 0 auto 0;z-index:110;background:rgba(255,255,255,0.75);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,180,200,0.06)}
-nav .nav-inner{display:flex;align-items:center;justify-content:flex-start;gap:32px;padding:18px 24px;max-width:var(--max-width);margin:0 auto}
+nav .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:var(--max-width);margin:0 auto}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:var(--dark);text-decoration:none}
 .nav-logo span{color:var(--teal)}
-.nav-links{display:flex;gap:26px;list-style:none;align-items:center}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center;margin-right:auto}
 .nav-links a{font-size:0.82rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);text-decoration:none}
 .nav-links a:hover,.nav-links a:focus{color:var(--teal);outline:none}
-.nav-cta{background:var(--teal);color:#fff;padding:10px 20px;border-radius:28px;text-decoration:none;font-weight:700;margin-left:auto}
+.nav-cta{background:var(--teal);color:#fff;padding:10px 20px;border-radius:28px;text-decoration:none;font-weight:700}
 .hamburger{display:none;background:none;border:0;padding:8px;cursor:pointer}
 .hamburger span{display:block;width:22px;height:2px;background:var(--dark);margin:4px 0;border-radius:2px;transition:transform .25s}
 
